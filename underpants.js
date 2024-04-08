@@ -45,7 +45,17 @@ _.identity = function(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
-
+_.typeOf = function(value) {
+    if (Array.isArray(value)) {
+        return "array";
+    } else if (value === null) {
+        return "null";
+    } else if (value === undefined) {
+        return "undefined";
+    } else {
+    return typeof value;
+    }
+}
 /** _.first
 * Arguments:
 *   1) An array
@@ -132,7 +142,18 @@ _.identity = function(value) {
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
-
+_.each = function(collection, func) {
+   
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+            func(collection[i], i, collection);
+    } 
+} else {
+    for (let key in collection) {
+        func(collection[key], key, collection)
+    }
+}
+}
 
 /** _.unique
 * Arguments:
