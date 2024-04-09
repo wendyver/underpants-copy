@@ -267,7 +267,7 @@ _.each = function(collection, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-
+_.every = (function)
 /** _.some
 * Arguments:
 *   1) A collection
