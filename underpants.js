@@ -74,7 +74,22 @@ _.typeOf = function(value) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function (array, number) {
+    if (!Array.isArray(array) || number < 0) {
+        return [];
+    } else if (!number || number === NaN) {
+        return array[0];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        let result = [];
+        for (let i = 0; i < number; i++) {
+             result.push(array[i])
+        }
+        return result;
+    }
 
+}
 /** _.last
 * Arguments:
 *   1) An array
@@ -267,7 +282,9 @@ _.each = function(collection, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = (function)
+
+
+
 /** _.some
 * Arguments:
 *   1) A collection
